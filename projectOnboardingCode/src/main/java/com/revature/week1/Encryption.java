@@ -1,7 +1,7 @@
 package com.revature.week1;
 
 public class Encryption {
-	public static String rot13(String s) {
+	public String rot13(String s) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < s.length(); i++) {
 			Character c = s.charAt(i);
