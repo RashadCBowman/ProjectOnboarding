@@ -1,27 +1,33 @@
 package com.revature;
 
-import com.revature.week2.MemorySize;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import com.revature.week3.SwapNumbers;
 
 public class Driver {
 	public static void main (String[] args) {
-		MemorySize ms = new MemorySize();
-		System.out.println(ms.actualMemorySize("32GB"));
-		System.out.println(ms.actualMemorySize("2GB"));
-		System.out.println(ms.actualMemorySize("1GB"));
-		System.out.println(ms.actualMemorySize("5Q12MB"));
-		System.out.println(ms.actualMemorySize("13"));
-		System.out.println(ms.actualMemorySize("GB"));
-		System.out.println(ms.actualMemorySize("MB"));
-		System.out.println(ms.actualMemorySize("1MB"));
 		
+
+		List<Integer> nums = Arrays.asList(3, 4, 6, 1, 2, 3);
+		List<Integer> numOnly = nums.stream().filter(n -> n >= 3).collect(Collectors.toList());
+		int num = nums.stream().filter(n -> n >= 3).reduce(0,(ans,i) -> ans=ans<i?i:ans);
+		int num2 = 0;
+		for (Integer n : numOnly) {
+			num2 += n;
+		}
 		
-//		String message = "This is a message! 1 2 3 should not be converted!";
-//		Integer num1 = new Integer(143);
-//		Long num2 = new Long(143);
-//		System.out.println("Normal Message : " + message);
-//		System.out.println("Rot13 Message : " + Encryption.rot13(message));
-//		System.out.println("Integer : " + num1 + " Long : " + num2);
-//		System.out.println("Convert Integer to Octal : " + ConvertToOctal.convertDecimalToOctal(num1));
-//		System.out.println("Convert Long to Octal : " + ConvertToOctal.convertDecimalToOctal(num2));
+		System.out.println("Num number: " + num);
+		System.out.println("Num2 number: " + num2);
+		SwapNumbers sn = new SwapNumbers();
+		Float[] fa = {3f,5f};
+		List<Float> fl = Arrays.asList(3f,5f);
+		
+		System.out.println("Inputting regularly : " + sn.swapNumber(3f,5f));
+		System.out.println("With an Array : " + Arrays.asList(sn.swapNumber(fa)));
+		System.out.println("With a List : " + sn.swapNumber(fl));
 	}
 }
