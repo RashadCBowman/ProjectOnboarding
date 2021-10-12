@@ -22,6 +22,8 @@ public class Driver {
 		im.whileMap(m);
 		
 		System.out.println(rs.rotateString("obbyb", "bobby"));
-		
+		System.out.println(rs.rotateString("yobbb", "bobby"));
+		System.out.println(rs.streamRotateString("obbyb", "bobby"));
+		System.out.println(rs.streamRotateString("yobbb", "bobby"));
 	}
 }

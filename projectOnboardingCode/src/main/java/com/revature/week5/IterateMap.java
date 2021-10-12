@@ -6,6 +6,8 @@ import java.util.Map;
 
 public class IterateMap {
 	
+	//Used Object since it did not specify what is being forwarded into the functions
+	//Using For Loop
 	public void forMap(Map<Object, Object> map) {
 		System.out.println("Using for loop:");
 		for (Map.Entry<Object, Object> m: map.entrySet()) {
@@ -15,6 +17,8 @@ public class IterateMap {
 		map.entrySet().stream().forEach(m -> System.out.println("Key: " +m.getKey()+ " Value: " + m.getValue()));
 	}
 	
+	
+	//Using While Loop
 	public void whileMap(Map<Object, Object> map) {
 		System.out.println("Using while loop:");
 		Iterator<Map.Entry<Object, Object>> m = map.entrySet().iterator();
